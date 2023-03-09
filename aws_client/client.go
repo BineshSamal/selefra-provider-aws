@@ -313,7 +313,13 @@ func newClient(config AwsProviderConfig) ([]*Client, error) {
 			})
 
 		if err != nil {
-			fmt.Printf(constants.FailedtofinddisabledregionsforAccountIDsAWSErrors, account.AccountName, err.Error())
+			errorMsg := strings.Builder{}
+			errorMsg.WriteString(fmt.Sprintf("Failed to find regions for AccountID %s. ", account.AccountName))
+			if strings.Contains(err.Error(), "AuthFailure") {
+				errorMsg.WriteString("The authentication you configured does not have EC2 read permission. ")
+			}
+			errorMsg.WriteString(fmt.Sprintf("AWS Error: %s", err.Error()))
+			fmt.Printf(errorMsg.String())
 			continue
 		}
 
