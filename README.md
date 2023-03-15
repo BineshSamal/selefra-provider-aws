@@ -18,7 +18,7 @@
 
 <br/>
 
-Use this repo as a raw reference to **tables and schema** for AWS cloud resources. [Here's](https://github.com/selefra/selefra-provider-aws/blob/main/docs/tables/aws.md) a summary of full coverage.
+Use this repo as a raw reference to **tables and schema** for AWS cloud resources. [Here's](https://www.selefra.io/docs/providers-connector/aws) a summary of full coverage.
 As an experienced user, the tables are especially helpful when you're writing SQL queries for specific task.
 If you're just starting, try some of the pre-written rules before writing customized ones:
 
